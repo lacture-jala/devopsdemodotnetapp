@@ -1,8 +1,8 @@
 pipeline{
     agent any 
-    triggers{
-        pollSCM('* * * * *')
-    }
+    // triggers{
+    //     pollSCM('* * * * *')
+    // }
 
     stages{
         stage('first stage'){
@@ -12,9 +12,10 @@ pipeline{
         }
         stage('build docker file stage'){
             steps{
-                sh '''
-                docker build -t ashish142/devopsdemodotnetapp:V1 .
-                '''
+                // sh '''
+                // // docker build -t ashish142/devopsdemodotnetapp:V1 .
+                // '''
+                dockerimage = docker.build("ashish142/devopsdemodotnetapp:V1")
             }
         }
     }
