@@ -11,6 +11,7 @@ RUN dotnet restore
 # Copy the rest of the application code
 COPY . .
 
+RUN mkdir -p /out && chmod 777 /out
 # Publish the application to the /out directory
 RUN dotnet publish -c Release -o /out
 
@@ -25,19 +26,3 @@ COPY --from=build /out .
 
 # Set the entry point to run the application
 ENTRYPOINT ["dotnet", "devopsdemodotnetapp.dll"]
-
-
-
-# FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-
-# WORKDIR /app
-# COPY . .
-# RUN dotnet restore
-# RUN dotnet publish -o out
-
-# FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
-
-# WORKDIR /app
-# COPY --from=build /app/out .
-# ENV ASPNETCORE_URLS=http://+:5000
-# ENTRYPOINT ["dotnet", "devopsdemodotnetapp.dll"]
