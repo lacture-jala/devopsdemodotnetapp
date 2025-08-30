@@ -13,7 +13,7 @@ COPY . .
 
 RUN mkdir -p /out && chmod 777 /out
 # Publish the application to the /out directory
-RUN dotnet publish -c Release -o /out
+RUN dotnet publish /app/devopsdemodotnetapp.csproj -c Release -o /out
 
 # Use the official .NET Runtime image for running the application
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
