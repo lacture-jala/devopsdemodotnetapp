@@ -10,5 +10,12 @@ pipeline{
                 echo "Welcome to first stage"
             }
         }
+        stage('build docker file stage'){
+            steps{
+                sh '''
+                    docker build -t ashish142/devopsdemodotnetapp:V1 .
+                '''
+            }
+        }
     }
 }
