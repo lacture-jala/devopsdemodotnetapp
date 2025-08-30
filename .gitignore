@@ -98,3 +98,4 @@ coverage*.info
 
 # Logs
 *.log
+.env
