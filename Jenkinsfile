@@ -80,20 +80,20 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            emailext(
-                subject: "Build Success: ${JOB_NAME} - Build # ${BUILD_NUMBER}",
-                body: "The build has completed successfully.\n\nView build: ${BUILD_URL}",
-                to: "admin@example.com"
-            )
-        }
-        failure {
-            emailext(
-                subject: "Build Failure: ${JOB_NAME} - Build # ${BUILD_NUMBER}",
-                body: "The build has failed.\n\nView build: ${BUILD_URL}",
-                to: "admin@example.com"
-            )
-        }
-    }
+    // post {
+    //     success {
+    //         emailext(
+    //             subject: "Build Success: ${JOB_NAME} - Build # ${BUILD_NUMBER}",
+    //             body: "The build has completed successfully.\n\nView build: ${BUILD_URL}",
+    //             to: "admin@example.com"
+    //         )
+    //     }
+    //     failure {
+    //         emailext(
+    //             subject: "Build Failure: ${JOB_NAME} - Build # ${BUILD_NUMBER}",
+    //             body: "The build has failed.\n\nView build: ${BUILD_URL}",
+    //             to: "ashishrajput142@gmail.com"
+    //         )
+    //     }
+    // }
 }
