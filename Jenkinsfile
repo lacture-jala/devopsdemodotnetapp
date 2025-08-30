@@ -13,7 +13,7 @@ pipeline{
         stage('build docker file stage'){
             steps{
                 sh '''
-                    docker build -t ashish142/devopsdemodotnetapp:V1 .
+                sudo docker build -t ashish142/devopsdemodotnetapp:V1 .
                 '''
             }
         }
