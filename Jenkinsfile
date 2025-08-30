@@ -15,7 +15,9 @@ pipeline{
                 // sh '''
                 // // docker build -t ashish142/devopsdemodotnetapp:V1 .
                 // '''
-                dockerimage = docker.build("ashish142/devopsdemodotnetapp:V1")
+                script{
+                    dockerimage = docker.build("ashish142/devopsdemodotnetapp:V1")
+                }
             }
         }
     }
