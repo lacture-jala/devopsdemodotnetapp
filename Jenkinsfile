@@ -7,7 +7,7 @@ pipeline {
         ECR_REPO_NAME = 'devopsdemodotnetapp'
         IMAGE_TAG = 'latest'  // You can dynamically set the build version
         ECR_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO_NAME}:${IMAGE_TAG}"
-        EC2_INSTANCE_IP = '13.233.134.116'
+        EC2_INSTANCE_IP = '13.235.94.135'
         EC2_USER = 'ubuntu'
     }
 
